@@ -41,10 +41,6 @@ const handleOauthCallback = async (accessToken: string, refreshToken: string, pr
   const { email, firstName, lastName, picture } = userData
   let existingUser
   try {
-    if (accessToken || refreshToken) {
-      console.log(accessToken)
-      console.log(refreshToken)
-    }
     existingUser = await User.findOne({ email })
   } catch (err) {
     return done(err)

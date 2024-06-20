@@ -1,4 +1,3 @@
-// express.d.ts
 import { IUser } from '../src/models/userModel'
 
 declare global {

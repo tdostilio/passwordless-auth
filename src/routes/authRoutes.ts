@@ -7,7 +7,7 @@ dotenv.config()
 const router = express.Router()
 
 // Google OAuth
-router.get('/auth/google', passport.authenticate('google'))
+router.get('/auth/google', passport.authenticate('google', <any>{ accessType: 'offline', prompt: 'consent' }))
 
 router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
   // Successful authentication, redirect home.
